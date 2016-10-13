@@ -1,0 +1,45 @@
+Timestamp: 2016-10-13 22:03
+Timestamp: 2016-10-13 00:25
+1.了解了android文件权限
+2.完成客户端请求服务端，并用unity实现
+3.安装mysql和mysql-front
+4.创建了一个数据库，添加了一个表
+
+Timestamp: 2016-10-12 00:23
+1.了解了一下手势插件
+2.看到了xword的UI界面是自己写了一个UI类。
+3.初步学习了一下photonserver，成功启动ChatServer
+
+Timestamp: 2016-10-11 01:03
+1.了解了一些vim的脚本语言
+2.增加了，更改透明度
+3.增加了，平台识别
+4.增加了，用户路径
+5.增加了，全屏切换
+
+Timestamp: 2016-10-10 00:35
+1.YouCompleteMe安装成功
+2.成功支持c#,语法补全和各种功能
+3.配色修改
+
+Timestamp: 2016-10-08 00:34
+1.设置日志类型文件的时间戳快捷键
+2.安装ycm,然而没有成功：
+YouCompleteMe unavailable: requires Vim compiled with Python 
+(2.6+ or 3.3+) support
+原因不详
+
+Timestamp: 2016-10-07 01:39
+配置vim,实现功能：
+1.高亮
+2.缩进
+3.模板
+    txt时间戳模板，写日志用
+4.gvim界面设置：字体，airline,tabline
+    隐藏不必要界面，主题更换
+5.符号自动补全
+6.vim实现系统剪切板
+7.不生成不必要文件
+8.禁用方向键
+9.窗口启动位置
+10.搜索高亮
