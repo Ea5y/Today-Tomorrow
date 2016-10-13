@@ -1,5 +1,7 @@
-﻿自动噗噜噜。Timestamp: 2016-10-13 22:03
-testestestes
+﻿Timestamp: 2016-10-13 22:03
+1.熟悉github创建仓库和提交本地代码
+2.把日志和todo都放到github随时随地更改一份就行
+3.vim添加git插件
 
 Timestamp: 2016-10-13 00:25
 1.了解了android文件权限
