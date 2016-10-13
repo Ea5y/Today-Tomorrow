@@ -1,5 +1,6 @@
 Timestamp: 2016-10-13 22:03
-ess
+1.学习github的使用
+
 Timestamp: 2016-10-13 00:25
 1.了解了android文件权限
 2.完成客户端请求服务端，并用unity实现
