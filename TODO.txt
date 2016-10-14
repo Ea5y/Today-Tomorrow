@@ -1,10 +1,7 @@
 Timestamp: 2016-10-14 01:45
 1.vim pull，push快捷键
-2.日志和todo从github获取
 
 Timestamp: 2016-10-13 00:28
-1.添加人质，状态条
 2.写出XUI文档并弄懂
 3.继续自己项目的服务器实现。
-4.研究下github仓库
 
