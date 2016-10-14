@@ -1,5 +1,6 @@
 Timestamp: 2016-10-14 01:45
 1.vim pull，push快捷键
+2.快捷键完成
 
 Timestamp: 2016-10-13 00:28
 2.写出XUI文档并弄懂
