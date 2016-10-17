@@ -1,3 +1,6 @@
+Timestamp: 2016-10-17 20:25
+1.write the blog about today's knowledge
+
 Timestamp: 2016-10-17 00:23
 1.学习camera
 2.学习xw项目的ui构架
