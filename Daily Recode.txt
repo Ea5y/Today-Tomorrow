@@ -1,4 +1,10 @@
-﻿Timestamp: 2016-10-17 00:19
+﻿Timestamp: 2016-10-17 15:26
+1.learn the EventHandler<T>
+2.learn IEnumerator
+3.known the design mode of the xword's ui 
+4.learn the fiber
+
+Timestamp: 2016-10-17 00:19
 1.加入百度谷歌站点
 2.本地文件夹分类
 3.快速提交博客快捷键
