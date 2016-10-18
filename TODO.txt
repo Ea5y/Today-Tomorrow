@@ -1,3 +1,6 @@
+Timestamp: 2016-10-18 23:38
+1.调查unity中裁剪的实现。
+
 Timestamp: 2016-10-17 20:25
 1.write the blog about today's knowledge
 

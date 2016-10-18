@@ -1,4 +1,12 @@
-﻿Timestamp: 2016-10-17 15:26
+﻿Timestamp: 2016-10-18 23:32
+1.博客写了一半。
+2.用户信息UI已经完成大半。
+3.知道了unity中anchor的用法。
+4.知道了scrollview的设置间隔方法，直接设置grid的cell height就行了
+5.知道了unity中多个相机的使用方法，给UI分Layer,然后让某个相机只显示某个Layer就实现了多个相机的使用，
+6.目前不知道的是unity中是怎么做到裁剪的，这个有时间要研究下，应该放到Todo
+
+Timestamp: 2016-10-17 15:26
 1.learn the EventHandler<T>
 2.learn IEnumerator
 3.known the design mode of the xword's ui 
