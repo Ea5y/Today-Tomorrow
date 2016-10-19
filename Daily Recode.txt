@@ -1,4 +1,10 @@
-﻿Timestamp: 2016-10-18 23:32
+﻿Timestamp: 2016-10-20 00:35
+1.XW项目用户信息界面，完成view的部分，部分model,controller还没动，
+2.学习了c#自身的system.serializable,和unity的serializaField发现序列化原来是这样用的，以前都是不知所云。用了序列化之后，unity的整个ui构架就全出来了，mvc的方式运用的相当完美。
+3.还有一个就是接口一定要先声明完，定义完，再引用，不然会出错。
+4.嗯，in the future，i will write with english.
+
+Timestamp: 2016-10-18 23:32
 1.博客写了一半。
 2.用户信息UI已经完成大半。
 3.知道了unity中anchor的用法。

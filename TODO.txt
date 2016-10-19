@@ -1,13 +1,17 @@
-Timestamp: 2016-10-18 23:38
-1.调查unity中裁剪的实现。
+Timestamp: 2016-10-20 01:02
+Project will be did:
+1.internalize the mvc in unity
+2.photon server
+3.about the cliping of unity
 
-Timestamp: 2016-10-17 20:25
-1.write the blog about today's knowledge
+New knowledge will be learned:
+1.about camera of unity
 
-Timestamp: 2016-10-17 00:23
-1.学习camera
-2.学习xw项目的ui构架
-3.写出XUI文档并弄懂
-4.继续自己项目的服务器实现。
-5.学习c#。
+Book will be red:
+1.c#
 
+Blog will be writed:
+1.about the mvc design mode---doing 
+2.about the serialize
+3.about the interface
+4.about the difference between struct and class
