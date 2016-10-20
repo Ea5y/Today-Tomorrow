@@ -3,6 +3,7 @@ Project will be did:
 1.internalize the mvc in unity
 2.photon server
 3.about the cliping of unity
+4.the manager about the panel has back function
 
 New knowledge will be learned:
 1.about camera of unity
@@ -11,7 +12,6 @@ Book will be red:
 1.c#
 
 Blog will be writed:
-1.about the mvc design mode---doing 
 2.about the serialize
 3.about the interface
 4.about the difference between struct and class
