@@ -4,6 +4,7 @@ Project will be did:
 2.photon server
 3.about the cliping of unity
 4.the manager about the panel has back function
+5.about System.Action
 
 New knowledge will be learned:
 1.about camera of unity
