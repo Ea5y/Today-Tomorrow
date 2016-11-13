@@ -1,6 +1,10 @@
+Timestamp: 2016-11-11 11:32
+1.about Invoke.
+2.about Thread.
+3.about process.
+
 Timestamp: 2016-10-20 01:02
 Project will be did:
-1.internalize the mvc in unity
 2.photon server
 3.about the cliping of unity
 4.the manager about the panel has back function
