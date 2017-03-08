@@ -167,6 +167,7 @@ let g:airline_powerline_fonts = 1
 let g:Powerline_symbols = 'fancy'
 set guifont=Droid_Sans_Mono_Slashed_for_Pow:h12:cANSI:qDRAFT
 set encoding=utf-8
+set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
 
 set laststatus=2
 
@@ -323,19 +324,26 @@ endf
 autocmd BufRead *.txt call SetTxtMap()
 
 "Post my blog
-autocmd BufRead *.md noremap ,<f3> :!hexo g -d<cr>
+autocmd BufWrite *.md noremap ,<f3> :!hexo g -d<cr>
 
 "Fast write
 imap w/ <esc>:w!<cr>
+
+"Line feed
+nmap j gj
+nmap k gk
 
 "Set YouCompleteMe
 "let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
 let g:ycm_min_num_of_chars_for_completion = 2
 let g:ycm_auto_trigger = 1
 let g:ycm_warning_symbol = '>'
+set completeopt-=preview
+"let g:ycm_add_preview_to_completeopt = 0
+"let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_echo_current_diagnostic = 1
 let g:ycm_enable_diagnostic_signs = 0
-"let g:ycm_echo_current_diagnostic = 1
+"let g:ycm_show_diagnostics_ui = 1
 "let g:ycm_always_populate_location_list = 0
 "let g:ycm_open_loclist_on_ycm_diags = 1
 "let g:ycm_always_changing_updatetime = 1
