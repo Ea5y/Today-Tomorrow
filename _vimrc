@@ -147,6 +147,8 @@ Plugin 'scrooloose/syntastic'
 "ListToggle
 "Plugin 'Valloric/ListToggle'
 
+"GLSL syntax"
+Plugin 'tikhomirov/vim-glsl'
 call vundle#end()
 filetype plugin indent on
 
@@ -288,6 +290,12 @@ endf
 function UpdateTimestamp()
 endf
 autocmd BufNewFile * call LoadTemplate()
+
+"GLSL
+function SetFsFile()
+    set filetype=glsl
+endf
+autocmd BufNewFile,BufRead *.fs,*.vs call SetFsFile()
 "Md
 
 "Cs
