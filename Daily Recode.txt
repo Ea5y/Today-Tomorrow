@@ -1,4 +1,9 @@
-﻿Timestamp: 2017-02-10 15:07
+﻿Timestamp: 2017-11-06 20:44
+1. add rapidjson to xlua:win32 win64 android
+2. network for cs an lua is completed
+3. add plugin mainthread for sub thread call main thread
+
+Timestamp: 2017-02-10 15:07
 1.delegate 本身是为了在函数中传递一个delegate类型的函数参数
 当出现多个参数相同的函数时，delegate就派上用处了，可以把函数注册进delegate类型的函数变量中，现在只需调用delegate类型的函数，就能执行之前注册过的多个函数。但是delegate函数注册的时候，需要先赋值=，在添加+=，原因。。。所有出现了event
 2.event event使delegate类型的函数不管是不是public都暴露在外面，但是只允许添加+=，不允许赋值=。

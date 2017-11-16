@@ -1,3 +1,173 @@
+Timestamp: 2017-11-16 09:48
+1.lua=>
+    require:
+        1>先在table package.loaded中检查模块是否已经加载过了，加载过了直接返回
+        2>否则require会为该模块找一个loader,先在table package.preload中查询传入的模块名，如果找到一个函数，就以改2函数作为模块的加载器。
+        3>否则require会尝试从lua文件中，或者c程序库中加载模块，如果找到了一个lua文件就loadfile,如果找到了一个c程序库就loadlib
+        4>如果require有返回值，就将这个返回值存入table package.loaded中，作为同一模块的返回值
+        5>loadfile 和loadlib只是加载代码并没有运行，为了运行require会以模块名作为参数调用这些代码
+    元表：
+        存放元方法的table
+        通过元表修改一个值的行为。
+    元方法：
+        制定lua中行为的规则
+    协程：
+
+2.帧同步=>
+    帧同步用于实现高精度打击体验(难点：反外挂，断线重连)
+    cs模式
+        一台游戏状态服（GSS）对应对台客户端c
+        游戏状态能保证绝对的一致性，但是一台服务器可能同时服务上万个玩家，服务器压力较大。
+    p2p模式
+        每个客户端包含一个状态服（GSS）,各个客户端的状态服进行同步。
+        p2p模式同时连接的玩家有限，所以可以进行比较精细的运算。但是随着接入用户的增加，通讯量呈指数级增长，所以会对接入数量做严格控制，适合少量同屏的竞技类游戏。
+        帧同步算法主要就是为了解决p2p模式下GSS的一致性问题。实现原理是将游戏处理细化为帧，对于没帧，在同样的环境中，保证同样的输入得到同样的输出。
+        实现方式大致分为三种：无主机，有主机，服务器主机
+            无主机：所有GSS功能对等，改方案需要确保所有客户端都已经同步了，并且收到所有的输入。一人出问题，其他人都会等他，影响用户体验。
+            有主机：随机选出一台GSS作为主机，其他GSS只与主机通讯，GSS之间不通讯。
+                    好处>是游戏体验只受主机和本机状况的影响。一人出问题不会影响其他人。主机失联，也可以仲裁得出新主机。
+                    缺点>该结构在客户端，很容易被串改，也就是外挂。
+            服务器主机：将GSS主机放到服务器上，防止被修改，安全性高，保证玩家体验，但脱离p2p模式，对服务器负责有要求。
+  状态同步=>
+    客户端上传操作到服务器上，服务器收到后计算游戏行为的结果，然后以广播的方式下发游戏中的各种状态，客户端收到状态后，根据状态显示内容。
+
+3.http=>
+4.tcp=>
+    连接：客户端发送连接请求报文（SYN） 
+          -> 服务端接受连接后回复响应报文（ACK）并为这次连接分配资源
+          -> 客户端收到响应报文（ACK）后也向服务端发送响应报文（ACK）这样TCP连接就建立了 
+    断开：客户端发送关闭连接请求报文（FIN）
+          -> 服务端接受关闭连接后回复响应报文（ACK）
+          -> 客户端接收到响应报文（ACK）后进入FIN_WAIT状态，继续等待服务端的关闭连接报文（FIN）
+          -> 服务端发送关闭连接报文（FIN）
+          -> 客户端收到关闭链接报文（FIN）后知道可以关闭连接了发送响应报文（ACK）后进入TIME_WAIT状态， 服务端收到响应报文（ACK）后知道可以断开连接了，客户端等待2MSL后没有收到回复，就证明服务端已经正常关闭了，那我客户端也可以关闭连接了
+
+
+Timestamp: 2017-11-07 18:11
+1.迅速创建大量用户。
+2.完成pachinko推荐位配置。
+2.完成状态更改的广播。
+Timestamp: 2017-11-02 11:33
+1.module login
+    SendLogin
+    OnLoginRecv
+Timestamp: 2017-10-26 09:31
+1.将现有热更框架移植到pk上，
+2.将通信都改为pbc
+
+Timestamp: 2017-10-23 09:49
+1.看lua书本。
+2.assetbundle依赖打包有空弄一下。
+3.写readme文档。
+Timestamp: 2017-10-19 14:13
+1.isLoading HotfixResource
+2.isLoadAsset from assetbundle
+
+Timestamp: 2017-10-16 19:31
+ApplicationMain->ResourceManager->EnableHotfix
+                                ->AssetPoolManager
+                                ->HotfixManager
+Timestamp: 2017-10-16 10:19
+1.热更一个新的界面:PanelNew
+    挂上PanelHotfix
+    程序下载热更资源，
+    启动热更，require 'PanelNew' //但是，我非常希望这个时候能获取PanelNew的gameobject,然而我却还没实例化上去，找不到的，可悲，，，
+    初始化管理器，
+    进入下一个场景,
+    实例化界面prefab，TransformGameObject to Lua 
+
+
+Timestamp: 2017-10-12 19:32
+重新设计BundleManager
+    1.Find PoolItem in [AssetPool]
+        Exist:Find Asset
+                Exist:Callback(Asset)
+                NoExist:Find Bundle in [BundleDic]
+        NoExist:Create a PoolItem
+
+    2.Find Bundle
+        Exist:  
+            Loading=true ->HangUp
+            Loading=false ->Load Asset ->Callback(Asset)
+        NoExist:Add bundle to [BundleDic] ->Load bundle ->Load Asset ->Callback(Asset)
+
+Timestamp: 2017-10-11 16:50
+1.在原有界面，新增UI,及逻辑
+    （1）创建一个原有类的同名Lua类
+         用hotfix,然后从injections获取新的UI控件
+
+
+2.新增一个新的界面
+    创建一个Lua类
+
+@TODO:用Statefull,解决新增函数问题
+
+Timestamp: 2017-10-09 09:58
+1.热更ui框架
+Timestamp: 2017-09-25 10:11
+1.登陆
+2.获取pachinko data
+
+Timestamp: 2017-09-20 09:31
+1.创建pachinko服务器项目
+2.创建用户表，用户数据表
+3.客户端完成网络模块
+3.完成一个http服务端，负责跟板子通信，
+  完成一个socket服务端，负责跟客户端通信
+4.http服务端根据socket服务端的get,去跟板子交互，一个板子对应一个http服务端
+5.socket服务端维护相应数量的pachinko数据模型，当数据改变时广播给客户端
+6.客户端根据数据模型的id,找到本地的数据模型，进行替换，并通过事件，发送出去，ui根据事件做相应的表现
+
+7.协议：
+    socketserver--->httpserver:
+        req&res
+            DealYdu:open close
+            DealSwitch:start end
+            DealLevel: 1,2,3,4,5
+            DealInput: recieve input
+    client--->socketserver:
+        req&res
+            DealSwitch:start end
+            DealLevel: 1,2,3,4,5
+            GetUserData: ....
+            GetPachinko:pachinko data
+            GetGoods:goods data
+        cast
+            ChangePachinkoData:state and data
+            ChangePachinkoInput:input data
+
+协议back:
+    client--->socketserver:
+        req&res
+            DealYdu: open close
+            DealSwitch: start end
+            DealLevel: 1,2,3,4,5
+            Register:
+            Login:
+            GetUserData: ....
+            GetPachinko:pachinko data
+            GetGoods:goods data
+    client<---socketserver:
+        cast
+            DealInput: recieve input
+            ChangePachinkoData:state and data
+            ChangePachinkoInput:input data
+
+
+
+
+Timestamp: 2017-09-19 17:53
+1.调查帧同步和状态同步。
+
+Timestamp: 2017-09-18 09:56
+1.PanelExchagne
+Timestamp: 2017-09-15 12:27
+1.Cast
+    CastSpawnPlayer
+    CastRecyclePlayer
+    CastSyncPlayerPosition
+    CastSyncPlayerState
+
 Timestamp: 2017-09-08 19:45
 1.完善人物动画控制。
 2.尝试有人连入，就创建响应的player。
